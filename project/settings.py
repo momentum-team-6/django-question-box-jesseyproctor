@@ -37,6 +37,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'registration',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -138,3 +139,6 @@ INTERNAL_IPS = [
     '127.0.0.1',
     # ...
 ]
+ACCOUNT_ACTIVATION_DAYS = 7 # you can choose this
+REGISTRATION_AUTO_LOGIN = True # logs in user when they register
+LOGIN_REDIRECT_URL = '/' # where user is sent after login

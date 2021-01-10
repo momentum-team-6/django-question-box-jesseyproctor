@@ -12,6 +12,7 @@ django-debug-toolbar = "*"
 django-environ = "*"
 werkzeug = "*"
 django-markdownify = "*"
+django-registration-redux = "*"
 
 [requires]
 python_version = "3.8"
