@@ -1,15 +1,15 @@
 from django.shortcuts import render
-from django.http import Httpresponse
+from django.http import HttpResponse
 
 # Create your views here.
 def homepage(request):
-    return Httpresponse("homepage")
+    return HttpResponse("homepage")
 
 def add_user(request):
-    return Httpresponse("hi")
+    return HttpResponse("hi")
 
 def user_login(request):
-    return Httpresponse("k")
+    return HttpResponse("k")
 
 def user_page(request):
-    return Httpresponse("p")
+    return HttpResponse("p")
