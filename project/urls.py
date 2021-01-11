@@ -1,20 +1,18 @@
 from django.contrib import admin
 from django.conf import settings
 from django.urls import include, path
-from core import views 
-from core.views import Register, Login, Logout #is this neccessary?
+# from core import views 
+from core.views import Register, Login, Logout, UserHomepage
 
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('registration.backends.simple.urls')),
-    path('/', views.homepage, name='homepage'),
+    path('userhomepage/', UserHomepage.as_view(), name='user_homepage'),
     path('register/', Register.as_view(), name='register'),
     path('login/', Login.as_view(), name='login'), 
     path('logout/', Logout.as_view(), name='logout'), 
-    path('my/page/', views.user_page, name='user_page'),
-
 ]
 
 if settings.DEBUG:
