@@ -44,10 +44,12 @@ class UserHomepage(FormView):
             user = request.user
             user.backend = 'django.contrib.core.backends.ModelBackend'
             ques_obj = Questions.objects.filter(user=user)
-            # print('ques_obj=======',ques_obj)
             content['userdetail'] = user
             content['questions'] = ques_obj
-            ans_obj = Answers.objects.filter(question=ques_obj[0])
+            if len(ques_obj) > 0:
+                ans_obj = Answers.objects.filter(question=ques_obj[0])
+            else:
+                ans_obj = []
             content['answers'] = ans_obj
             return render(request, 'user_homepage.html', content)
         else:
